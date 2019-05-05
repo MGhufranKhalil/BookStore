@@ -11,7 +11,7 @@ export default class Starter extends Component {
             <Header />
             <Content>
             <Image block
-                style={{width: 200, height: 300, alignItems:'center',justifyContent: 'center'}}
+                style={{width: 200, height: 300, marginLeft:100}}
                 source={{uri: 'https://requestreduce.org/images/clip-art-for-free-6.png'}}
                 />
                 <Button block onPress={() => this.props.navigation.navigate('Login')} transparent>
