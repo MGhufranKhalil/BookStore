@@ -10,14 +10,14 @@ export default class Starter extends Component {
           <Container padder style={styles.content}>
             <Header />
             <Content>
-            <Image
-                style={{width: 200, height: 300}}
+            <Image block
+                style={{width: 200, height: 300, alignItems:'center',justifyContent: 'center'}}
                 source={{uri: 'https://requestreduce.org/images/clip-art-for-free-6.png'}}
                 />
-                <Button block onPress={() => this.props.navigation.navigate('Login')} transparent  >
+                <Button block onPress={() => this.props.navigation.navigate('Login')} transparent>
                   <Text>Sign in</Text>
                 </Button>
-                <Button block onPress={() => this.props.navigation.navigate('Login')} transparent    >
+                <Button block onPress={() => this.props.navigation.navigate('Login')} transparent>
                   <Text>Sign up</Text>
                 </Button>
                 {/* <Book/> */}

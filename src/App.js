@@ -1,55 +1,42 @@
-/**
- * Copyright (c) 2017-present, Wonday (@wonday.org)
- * All rights reserved.
- *
- * This source code is licensed under the MIT-style license found in the
- * LICENSE file in the root directory of this source tree.
- */
  
-import React from 'react';
-import { StyleSheet, Dimensions, View } from 'react-native';
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View} from 'react-native';
+import { Container, Header, Content, Form, Item, Input } from 'native-base';
+import { createStackNavigator, createAppContainer } from "react-navigation";
+import Login from './Components/Login';
+import Store from './Components/Store';
+import Dashboard from './Components/Dashboard';
+import Book from './Components/Book';
+import Starter from './Components/Starter';
  
-import Pdf from 'react-native-pdf';
- 
-export default class PDFExample extends React.Component {
-    render() {
-        //const source = {uri:'http://samples.leanpub.com/thereactnativebook-sample.pdf',cache:true};
-        // const source = { require('thereactnativebook-sample.pdf') ,cache:true};
-        //const source = require('./test.pdf');  // ios only
-        //const source = {uri:'bundle-assets://test.pdf'};
- 
-        //const source = {uri:'file:///sdcard/test.pdf'};
-        //const source = {uri:"data:application/pdf;base64,..."};
- 
-        return (
-            <View style={styles.container}>
-                <Pdf
-                     source={require('./assets/pdf/thereactnativebook-sample.pdf')}
-                    onLoadComplete={(numberOfPages,filePath)=>{
-                        console.log(`number of pages: ${numberOfPages}`);
-                    }}
-                    onPageChanged={(page,numberOfPages)=>{
-                        console.log(`current page: ${page}`);
-                    }}
-                    onError={(error)=>{
-                        console.log(error);
-                    }}
-                    style={styles.pdf}/>
-            </View>
-        )
-  }
-}
- 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        marginTop: 25,
-    },
-    pdf: {
-        flex:1,
-        width:Dimensions.get('window').width,
-    }
+// export default class App extends Component {
+
+//     render() {
+//         let isLogin = 0;
+//         return (
+//           <Container>
+//             <Header />
+//             <Content>
+//                 {/* <Book/> */}
+//                 {/* <Store/> */}
+//                {/* <Login/> */}
+//             </Content>
+//           </Container>
+//         );
+//       }
+// }
+
+// export default  createStackNavigator({
+//     Login: Login,
+//     Dashboard:Dashboard,
+//     Book:Book
+// });
+
+const AppNavigator = createStackNavigator({
+    Starter: Starter,
+    Login: Login,
+    Dashboard:Dashboard,
+    Book:Book
 });
- 
+
+export default createAppContainer(AppNavigator);
