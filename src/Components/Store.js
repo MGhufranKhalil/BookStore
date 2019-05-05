@@ -25,7 +25,7 @@ export default class Store extends Component {
             </CardItem>
             <CardItem>
               <Left>
-                <Button onPress={() => alert("Read the book")} transparent textStyle={{color: '#87838B'}} >
+                <Button onPress={() => this.props.navigation.navigate('Book')} transparent textStyle={{color: '#87838B'}} >
                   <Icon name="logo-github" />
                   <Text>1,926 Views</Text>
                 </Button>
@@ -53,7 +53,7 @@ export default class Store extends Component {
             </CardItem>
             <CardItem>
               <Left>
-                <Button onPress={() => alert("Read the book")} transparent textStyle={{color: '#87838B'}} >
+                <Button onPress={() => this.props.navigation.navigate('Book')} transparent textStyle={{color: '#87838B'}} >
                   <Icon name="logo-github" />
                   <Text>1,926 Views</Text>
                 </Button>
