@@ -1,6 +1,6 @@
  
 import React, {Component} from 'react';
-import {  Image,StyleSheet} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import { Container, Header, Content, Form, Item, Input,Text, Button} from 'native-base';
 
 export default class Starter extends Component {
@@ -14,6 +14,11 @@ export default class Starter extends Component {
                 style={{width: 200, height: 300, marginLeft:100}}
                 source={{uri: 'https://requestreduce.org/images/clip-art-for-free-6.png'}}
                 />
+                <View>
+                    <Text style={styles.MainText}>
+                        BOOK APP
+                    </Text>
+                </View>
                 <Button block onPress={() => this.props.navigation.navigate('Login')} transparent>
                   <Text>Sign in</Text>
                 </Button>
@@ -32,6 +37,11 @@ export default class Starter extends Component {
 const styles= StyleSheet.create({
     content:{
         flex:1,
+    },
+    MainText:{
+        fontSize:24,
+        textAlign:'center',
+        color:'#0091cd' 
     }
 });
  
