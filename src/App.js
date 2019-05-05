@@ -33,7 +33,12 @@ import Starter from './Components/Starter';
 // });
 
 const AppNavigator = createStackNavigator({
-    Starter: Starter,
+    Starter: {
+        screen:Starter,
+        navigationOptions: {
+            header: null,
+        }
+    },
     Login: Login,
     Dashboard:Dashboard,
     Book:Book
