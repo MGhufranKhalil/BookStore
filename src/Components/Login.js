@@ -14,7 +14,7 @@ export default class Login extends Component {
               <Input placeholder="Password" />
             </Item>
 
-            <Button block onPress={() => this.props.navigation.navigate('Dashboard')} >
+            <Button style={styles.button} block onPress={() => this.props.navigation.navigate('HomeScreen')} >
                 <Text>Sign in</Text>
             </Button>
           </Form>
@@ -26,6 +26,15 @@ export default class Login extends Component {
 const styles= StyleSheet.create({
     content:{
         flex:1,
+    },
+
+    button: {
+      marginTop: 10,
+      padding: 20,
+      width: '100%',
+      backgroundColor: '#00aeef',
+      borderRadius: 4,
+      alignItems: 'center',
     }
 });
  

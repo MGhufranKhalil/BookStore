@@ -8,6 +8,7 @@ import Store from './Components/Store';
 import Dashboard from './Components/Dashboard';
 import Book from './Components/Book';
 import Starter from './Components/Starter';
+import HomeScreen from './Components/HomeScreen'
  
 // export default class App extends Component {
 
@@ -41,7 +42,8 @@ const AppNavigator = createStackNavigator({
     },
     Login: Login,
     Dashboard:Dashboard,
-    Book:Book
+    Book:Book,
+    HomeScreen: HomeScreen
 });
 
 export default createAppContainer(AppNavigator);

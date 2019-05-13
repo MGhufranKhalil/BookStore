@@ -10,6 +10,7 @@ export default class Starter extends Component {
           <Container padder style={styles.content}>
             <Header />
             <Content>
+            <Form>
             <Image block
                 style={{width: 200, height: 300, marginLeft:100}}
                 source={{uri: 'https://requestreduce.org/images/clip-art-for-free-6.png'}}
@@ -19,15 +20,16 @@ export default class Starter extends Component {
                         BOOK APP
                     </Text>
                 </View>
-                <Button block onPress={() => this.props.navigation.navigate('Login')} transparent>
+                <Button style={styles.button} block onPress={() => this.props.navigation.navigate('Login')}>
                   <Text>Sign in</Text>
                 </Button>
-                <Button block onPress={() => this.props.navigation.navigate('Login')} transparent>
+                <Button style={styles.button} block onPress={() => this.props.navigation.navigate('Login')}>
                   <Text>Sign up</Text>
                 </Button>
                 {/* <Book/> */}
                 {/* <Store/> */}
                {/* <Login/> */}
+               </Form>
             </Content>
           </Container>
         );
@@ -41,7 +43,16 @@ const styles= StyleSheet.create({
     MainText:{
         fontSize:24,
         textAlign:'center',
-        color:'#0091cd' 
+        color:'#00aeef' 
+    },
+
+    button: {
+      marginTop: 10,
+      padding: 20,
+      width: '100%',
+      backgroundColor: '#00aeef',
+      borderRadius: 4,
+      alignItems: 'center',
     }
 });
  
