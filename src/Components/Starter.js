@@ -8,8 +8,8 @@ export default class Starter extends Component {
         let isLogin = 0;
         return (
           <Container padder style={styles.content}>
-            <Header />
-            <Content>
+           
+            <Content style={{marginTop:50}}>
             <Form>
             <Image block
                 style={{width: 200, height: 300, marginLeft:100}}
@@ -20,7 +20,7 @@ export default class Starter extends Component {
                         BOOK APP
                     </Text>
                 </View>
-                <Button style={styles.button} block onPress={() => this.props.navigation.navigate('Login')}>
+                <Button style={styles.button} block onPress={() => this.props.navigation.navigate('Dashboard')}>
                   <Text>Sign in</Text>
                 </Button>
                 <Button style={styles.button} block onPress={() => this.props.navigation.navigate('Login')}>
@@ -43,14 +43,16 @@ const styles= StyleSheet.create({
     MainText:{
         fontSize:24,
         textAlign:'center',
-        color:'#00aeef' 
+        color:'#0091cd' 
     },
 
     button: {
       marginTop: 10,
+      marginLeft:15,
+      marginRight:15,
       padding: 20,
-      width: '100%',
-      backgroundColor: '#00aeef',
+      
+      backgroundColor: '#0091cd',
       borderRadius: 4,
       alignItems: 'center',
     }
