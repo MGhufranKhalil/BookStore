@@ -2,14 +2,14 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Container, Header, Content, Form, Item, Input } from 'native-base';
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createStackNavigator, createAppContainer, createDrawerNavigator } from "react-navigation";
 import Login from './Components/Login';
 import Store from './Components/Store';
 import Dashboard from './Components/Dashboard';
 import Book from './Components/Book';
 import Starter from './Components/Starter';
 import HomeScreen from './Components/HomeScreen'
- 
+import Drawer from './Components/Drawer';
 // export default class App extends Component {
 
 //     render() {
@@ -32,7 +32,18 @@ import HomeScreen from './Components/HomeScreen'
 //     Dashboard:Dashboard,
 //     Book:Book
 // });
+const MyDrawerNavigator = createDrawerNavigator({
+    Home: {
+      screen: Dashboard,
+    },
+    Settings: {
+      screen: Dashboard,
+    },
+    Logout: {
+        screen: Dashboard,
+    },
 
+});
 const AppNavigator = createStackNavigator({
     Starter: {
         screen:Starter,
@@ -43,7 +54,8 @@ const AppNavigator = createStackNavigator({
     Login: Login,
     Dashboard:Dashboard,
     Book:Book,
-    HomeScreen: HomeScreen
+    HomeScreen: HomeScreen,
+    Drawer:MyDrawerNavigator 
 });
 
 export default createAppContainer(AppNavigator);

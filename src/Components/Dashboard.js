@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import { Image  } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { createStackNavigator, createAppContainer, createDrawerNavigator } from 'react-navigation';
+
 export default class Dashboard extends Component {
   static navigationOptions = {
+    
     headerLeft: (
+      
       <Button transparent   
-        onPress={() => alert('Add New Book')}
+        onPress={() => this.props.navigation.navigate('Starter')}
       ><Icon type="FontAwesome" style={{color:"#0091cd",fontSize:20}} name="bars" /></Button>
     ),
     headerRight: (
@@ -21,10 +25,13 @@ export default class Dashboard extends Component {
   };
   render() {
     return (
-      
+     
         <Content padder>
           <Card style={{flex: 0}}>
             <CardItem>
+            <Button transparent   
+        onPress={() => this.props.navigation.navigate('Drawer')}
+      ><Icon type="FontAwesome" style={{color:"#0091cd",fontSize:20}} name="bars" /></Button>
               <Left>
                 <Body>
                   <Text>Rich Dad Poor Dad</Text>

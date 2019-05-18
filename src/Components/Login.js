@@ -14,7 +14,7 @@ export default class Login extends Component {
               <Input placeholder="Password" />
             </Item>
 
-            <Button style={styles.button} block onPress={() => this.props.navigation.navigate('HomeScreen')} >
+            <Button style={styles.button} block onPress={() => this.props.navigation.navigate('Dashboard')} >
                 <Text>Sign in</Text>
             </Button>
           </Form>
