@@ -3,18 +3,24 @@ import {Platform, StyleSheet } from 'react-native';
 
 import { Container, Header, Content, Form, Item, Input,Button, Text } from 'native-base';
 export default class Login extends Component {
+  state = { email: '', password: '', errorMessage: null }
+  handleLogin = () => {
+    // TODO: Firebase stuff...
+    console.log('handleLogin')
+  }
   render() {
     return (
         <Content padder style={styles.content}>
           <Form>
           <Item >
-              <Input placeholder="Username" />
+              <Input placeholder="Email" onChangeText={email => this.setState({email})} value={this.state.email}  />
             </Item>
             <Item>
-              <Input placeholder="Password" />
+              <Input secureTextEntry placeholder="Password" onChangeText={password => this.setState({password})} value={this.state.password}
+              />
             </Item>
 
-            <Button style={styles.button} block onPress={() => this.props.navigation.navigate('Dashboard')} >
+            <Button style={styles.button} block onPress={this.handleLogin}>
                 <Text>Sign in</Text>
             </Button>
           </Form>
