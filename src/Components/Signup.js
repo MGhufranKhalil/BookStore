@@ -4,9 +4,12 @@ import {Platform, StyleSheet } from 'react-native';
 import { Container, Header, Content, Form, Item, Input,Button, Text } from 'native-base';
 export default class Signup extends Component {
   state = { email: '', password: '', errorMessage: null }
-  handleSignup = () => {
-    // TODO: Firebase stuff...
-    console.log('handleSignup')
+  handleSignUp = () => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then(() => this.props.navigation.navigate('Dashboard'))
+      .catch(error => console.log(this.setState({ errorMessage: error.message })))
   }
   render() {
     return (

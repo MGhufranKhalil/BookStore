@@ -23,7 +23,7 @@ export default class Starter extends Component {
                 <Button style={styles.button} block onPress={() => this.props.navigation.navigate('Login')}>
                   <Text>Sign in</Text>
                 </Button>
-                <Button style={styles.button} block onPress={() => this.props.navigation.navigate('Login')}>
+                <Button style={styles.button} block onPress={() => this.props.navigation.navigate('Signup')}>
                   <Text>Sign up</Text>
                 </Button>
                 {/* <Book/> */}

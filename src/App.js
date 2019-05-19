@@ -6,6 +6,7 @@ import firebase from "firebase";
 import { createStackNavigator, createAppContainer, createDrawerNavigator  } from "react-navigation";
 
 import Login from './Components/Login';
+import Signup from './Components/Signup';
 import Store from './Components/Store';
 import Dashboard from './Components/Dashboard';
 import Book from './Components/Book';
@@ -73,6 +74,7 @@ const AppNavigator = createStackNavigator({
         }
     },
     Login: Login,
+    Signup: Signup,
     Dashboard:Dashboard,
     Book:Book,
     HomeScreen: HomeScreen,
