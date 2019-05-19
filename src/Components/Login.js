@@ -13,6 +13,10 @@ export default class Login extends Component {
         <Content padder style={styles.content}>
           <Form>
           <Item >
+          {this.state.errorMessage &&
+          <Text style={{ color: 'red' }}>
+            {this.state.errorMessage}
+          </Text>}
               <Input placeholder="Email" onChangeText={email => this.setState({email})} value={this.state.email}  />
             </Item>
             <Item>

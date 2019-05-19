@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Platform, StyleSheet } from 'react-native';
-
-import { Container, Header, Content, Form, Item, Input,Button, Text } from 'native-base';
+import firebase from 'firebase';
+import { Container, Header, Content, Form, Item, Input,Button, Text} from 'native-base';
 export default class Signup extends Component {
   state = { email: '', password: '', errorMessage: null }
   handleSignUp = () => {
@@ -16,6 +16,10 @@ export default class Signup extends Component {
         <Content padder style={styles.content}>
           <Form>
           <Item >
+          {this.state.errorMessage &&
+          <Text style={{ color: 'red' }}>
+            {this.state.errorMessage}
+          </Text>}
               <Input placeholder="Email" onChangeText={email => this.setState({email})} value={this.state.email}  />
             </Item>
             <Item>
@@ -23,7 +27,7 @@ export default class Signup extends Component {
               />
             </Item>
 
-            <Button style={styles.button} block onPress={this.handleSignup}>
+            <Button style={styles.button} block onPress={this.handleSignUp}>
                 <Text>Sign up</Text>
             </Button>
           </Form>
