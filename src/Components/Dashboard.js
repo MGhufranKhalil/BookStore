@@ -10,7 +10,7 @@ export default class Dashboard extends Component {
     headerLeft: (
       
       <Button transparent   
-        onPress={() => this.props.navigation.navigate('Starter')}
+        onPress={() => alert('Drawer Navigation')}
       ><Icon type="FontAwesome" style={{color:"#0091cd",fontSize:20}} name="bars" /></Button>
     ),
     headerRight: (
@@ -29,9 +29,6 @@ export default class Dashboard extends Component {
         <Content padder>
           <Card style={{flex: 0}}>
             <CardItem>
-            <Button transparent   
-        onPress={() => this.props.navigation.navigate('Drawer')}
-      ><Icon type="FontAwesome" style={{color:"#0091cd",fontSize:20}} name="bars" /></Button>
               <Left>
                 <Body>
                   <Text>Rich Dad Poor Dad</Text>

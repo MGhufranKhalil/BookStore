@@ -2,7 +2,9 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Container, Header, Content, Form, Item, Input } from 'native-base';
-import { createStackNavigator, createAppContainer, createDrawerNavigator } from "react-navigation";
+import firebase from "firebase";
+import { createStackNavigator, createAppContainer, createDrawerNavigator  } from "react-navigation";
+
 import Login from './Components/Login';
 import Store from './Components/Store';
 import Dashboard from './Components/Dashboard';
@@ -32,6 +34,25 @@ import Drawer from './Components/Drawer';
 //     Dashboard:Dashboard,
 //     Book:Book
 // });
+class App extends Component {
+    componentWillMount() {
+        firebase.initializeApp({
+            apiKey: "AIzaSyBSjfaU3SINqY23n7KdKqVMNB_Gt6xpoCU",
+            authDomain: "bookstore-9da14.firebaseapp.com",
+            databaseURL: "https://bookstore-9da14.firebaseio.com",
+            projectId: "bookstore-9da14",
+            storageBucket: "bookstore-9da14.appspot.com",
+            messagingSenderId: "709242893200",
+            appId: "1:709242893200:web:0c4d5aeed2a05380"
+        });
+    }
+    render() {
+       
+        return (
+         <AppContainer/>  
+        );
+      }
+}
 const MyDrawerNavigator = createDrawerNavigator({
     Home: {
       screen: Dashboard,
@@ -57,5 +78,6 @@ const AppNavigator = createStackNavigator({
     HomeScreen: HomeScreen,
     Drawer:MyDrawerNavigator 
 });
-
-export default createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(AppNavigator);
+// export default createAppContainer(AppNavigator);
+export default App;
