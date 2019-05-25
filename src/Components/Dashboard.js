@@ -5,24 +5,26 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { createStackNavigator, createAppContainer, createDrawerNavigator } from 'react-navigation';
 
 export default class Dashboard extends Component {
-  static navigationOptions = {
-    
-    headerLeft: (
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerLeft: (
       
-      <Button transparent   
-        onPress={() => alert('Drawer Navigation')}
-      ><Icon type="FontAwesome" style={{color:"#0091cd",fontSize:20}} name="bars" /></Button>
-    ),
-    headerRight: (
-      // <TouchableOpacity onPress={() => alert('This is a button!')}>
-      //   <Icon style={{color:"#0091cd"}} name="logo-github" />
-      // </TouchableOpacity>
-
-      <Button transparent 
-        onPress={() => alert('Add New Book')}
-      ><Icon type="FontAwesome"  style={{color:"#0091cd",fontWeight:'normal',fontSize:20}} name="plus" /></Button>
-    ),
+        <Button transparent   
+          onPress={() => alert('Drawer Navigation')}
+        ><Icon type="FontAwesome" style={{color:"#0091cd",fontSize:20}} name="bars" /></Button>
+      ),
+      headerRight: (
+        // <TouchableOpacity onPress={() => alert('This is a button!')}>
+        //   <Icon style={{color:"#0091cd"}} name="logo-github" />
+        // </TouchableOpacity>
+  
+        <Button transparent 
+        onPress={() =>  navigation.navigate('AddBook')}
+        ><Icon type="FontAwesome"  style={{color:"#0091cd",fontWeight:'normal',fontSize:20}} name="plus" /></Button>
+      ),
+    };
   };
+  
   render() {
     return (
      

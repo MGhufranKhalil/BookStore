@@ -5,6 +5,7 @@ import { Container, Header, Content, Form, Item, Input } from 'native-base';
 import firebase from "firebase";
 import { createStackNavigator, createAppContainer, createDrawerNavigator  } from "react-navigation";
 
+import AddBook from './Components/AddBook';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Store from './Components/Store';
@@ -75,6 +76,7 @@ const AppNavigator = createStackNavigator({
     },
     Login: Login,
     Signup: Signup,
+    AddBook: AddBook,
     Dashboard:Dashboard,
     Book:Book,
     HomeScreen: HomeScreen,
