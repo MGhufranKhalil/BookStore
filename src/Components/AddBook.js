@@ -14,7 +14,7 @@ export default class AddBook extends Component {
     firebase
     .database()
     .ref(`Book/`).child("BookData")
-    .set({
+    .push({
       BookName:BookName,
       AuthorName:AuthorName,
       ShortDescription: ShortDescription,
