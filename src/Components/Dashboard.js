@@ -27,15 +27,50 @@ export default class Dashboard extends Component {
           .database().ref('Book').on('value', (snapshot) => {
         let data = snapshot.val();
         let items = Object.values(data);
-        console.log(items);
+        this.setState({ items });
+        console.log(items) 
      });
   }
 
   render() {
-    
+     
     return (
       
         <Content padder>
+           
+          {/* {
+              this.state.items.length > 0
+              ? <ItemComponent items={this.state.items} />
+              : <Text>No items</Text>
+          } */}
+        {/* {this.state.items.map((item, index) => {
+          <Card style={{flex: 0}}  key={index}>
+          <CardItem>
+            <Left>
+              <Body>
+                <Text>{item.BookName}</Text>
+                <Text note>{item.AuthorName}</Text>
+              </Body>
+            </Left>
+          </CardItem>
+          <CardItem>
+            <Body>
+              <Image onPress={() => alert("Read the book")}  source={require('../assets/images/richdad.jpg')} style={{height: 200, width: 200, flex: 1}}/>
+              <Text>{item.ShortDescription}</Text>
+            </Body>
+          </CardItem>
+          <CardItem>
+            <Left>
+              <Button onPress={() => this.props.navigation.navigate('Book')} transparent textStyle={{color: '#87838B'}} >
+                <Icon name="logo-github" />
+                <Text>1,926 Views</Text>
+              </Button>
+            </Left>
+          </CardItem>
+        </Card>
+        })} */}
+          
+          {/* another book */}
           <Card style={{flex: 0}}>
             <CardItem>
               <Left>
@@ -62,8 +97,6 @@ export default class Dashboard extends Component {
               </Left>
             </CardItem>
           </Card>
-          {/* another book */}
-
           <Card style={{flex: 0}}>
             <CardItem>
               <Left>

@@ -18,10 +18,8 @@ export default class AddBook extends Component {
       BookName:BookName,
       AuthorName:AuthorName,
       ShortDescription: ShortDescription,
-    }).then((data) => {
-      //success callback
-      console.log('data ', data)
-    }).catch(error => this.setState({ errorMessage: error.message }));
+    }).then(() => this.props.navigation.navigate('Dashboard'))
+    .catch(error => this.setState({ errorMessage: error.message }));
   }
 
   render() {
